@@ -4,18 +4,18 @@ const path = require('path');
 const app = express();
 
 // Serve static files from the public directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // Route for the root URL
 app.get('/', (req, res) => {
   // Send index.html
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
 
 // Route for /comingsoon URL
 app.get('/comingsoon', (req, res) => {
   // Send comingsoon.html
-  res.sendFile(path.join(__dirname, 'public', 'comingsoon.html'));
+  res.sendFile(path.join(__dirname, '..', 'public', 'comingsoon.html'));
 });
 
 // Start the server
